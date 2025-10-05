@@ -1,5 +1,9 @@
 # Gap Messenger
 
+<br>
+  <img align="center" width="300" height="300"  src="https://gap.im/gap-site/images/logo-header.png"/>
+ <img src="https://www.android-ide.com/img/AIDE.png" decoding="async" width="200" height="200">
+ <br>
 A WebView-based messaging application that wraps the main Gap messenger website into a native Android app.
 
 ### 📱 About the App
