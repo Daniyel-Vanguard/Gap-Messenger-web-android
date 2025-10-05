@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F7F7F7</color>
+    <color name="colorPrimaryDark">#F7F7F7</color>
+    <color name="colorAccent">#F7F7F7</color>
+    <color name="statusBarColor">#F7F7F7</color>
+    <color name="colorBackground">#F7F7F7</color>
+    <color name="windowBackground">#F7F7F7</color>
+    
+</resources>

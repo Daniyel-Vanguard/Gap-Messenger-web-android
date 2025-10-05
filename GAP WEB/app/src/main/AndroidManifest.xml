@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.vddaniyel">
+
+    <!-- دسترسی‌های ضروری -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <!-- دسترسی‌های اختیاری (برای نسخه‌های قدیمی) -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
+    <!-- قابلیت‌های سخت‌افزاری -->
+    <uses-feature android:name="android.hardware.camera" android:required="true" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false" />
+    <uses-feature android:glEsVersion="0x00020000" android:required="true" />
+    <uses-feature android:name="android.hardware.touchscreen" android:required="true" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:smallScreens="true"
+        android:normalScreens="true"
+        android:largeScreens="true"
+        android:xlargeScreens="true" />
+
+    <application
+        android:name=".App"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:requestLegacyExternalStorage="true"
+        android:resizeableActivity="true">
+
+        <activity android:name=".ui.activity.MainActivity"
+            android:label="@string/app_name"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- اکتیویتی CrashHandler -->
+        <activity android:name=".common.crash.CrashHandler$CrashActiviy"
+            android:exported="false" />
+
+        <!-- اضافه کردن اکتیویتی‌های جدید برای منو -->
+        <activity
+            android:name=".ui.activity.activity1"
+            android:launchMode="singleTask"
+            android:taskAffinity=".account1"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.activity2"
+            android:launchMode="singleTask"
+            android:taskAffinity=".account2"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.activity3"
+            android:launchMode="singleTask"
+            android:taskAffinity=".account3"
+            android:exported="false" />
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="4.0"/>
+    </application>
+
+    <queries>
+        <package android:name="ir.mservices.market"/>
+        <package android:name="com.google.android.apps.maps"/>
+    </queries>
+</manifest>
